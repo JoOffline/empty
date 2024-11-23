@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f9f9f9;
+    min-height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Menambahkan scroll behavior smooth */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 2em;
+    color: #359381;
+    pointer-events: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #359381;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.navigation a:hover, .navigation a.active {
+    background: #359381;
+    color: #fff;
+}
+
+.parallax {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin-top: 55px; /* Sesuaikan dengan tinggi header */
+}
+
+#text {
+    position: relative;
+    font-size: 3.5em;
+    color: whitesmoke;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, .2);
+    
+}
+
+.parallax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.sec1 {
+    position: relative;
+    background: #003329;
+    padding: 100px;
+    padding-top: 150px; /* Sesuaikan padding agar konten tidak terhalang header */
+}
+
+.sec2 {
+    position: relative;
+    background: #359381;
+    padding: 100px;
+    padding-top: 150px; /* Sesuaikan padding agar konten tidak terhalang header */
+}
+
+.sec1 h2 {
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sec1 p {
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+}
+
+.sec2 h2 {
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sec2 p {
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.photos-grid img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 10px;
+}
+
+/* Tambahkan bagian terakhir dengan warna cyan/biru muda */
+.last-section {
+    background: cyan;
+    height: 100vh;
+}

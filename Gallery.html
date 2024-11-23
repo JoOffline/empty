@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan KI Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation">
+            <a href="#home" class="active" data-section="home">Home</a>
+            <a href="#about-section" data-section="about">About</a>
+            <a href="#photos" data-section="photos">Photos</a>
+        </nav>
+    </header>
+
+    <section class="parallax" id="home">
+        <img src="assets/hill1.png" id="hill1">
+        <img src="assets/hill2.png" id="hill2">
+        <img src="assets/hill3.png" id="hill3">
+        <img src="assets/hill4.png" id="hill4">
+        <img src="assets/hill5.png" id="hill5">
+        <img src="assets/tree.png" id="tree">
+        <h2 id="text">Laporan<br>Kunjungan Industri</h2>
+        <img src="assets/leaf.png" id="leaf">
+        <img src="assets/plant.png" id="plant">
+    </section>
+
+    <section class="sec1" id="about-section">
+        <h2>About</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita doloremque ipsum voluptatem distinctio molestiae, a, quod dolore minus aperiam iure voluptas iste est officia sint voluptatibus delectus impedit sunt velit.<br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita doloremque ipsum voluptatem distinctio molestiae, a, quod dolore minus aperiam iure voluptas iste est officia sint voluptatibus delectus impedit sunt velit.<br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita doloremque ipsum voluptatem distinctio molestiae, a, quod dolore minus aperiam iure voluptas iste est officia sint voluptatibus delectus impedit sunt velit.<br><br>
+        </p>
+    </section>
+
+    <section class="sec2" id="latar-belakang">
+        <h2>Latar Belakang</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita doloremque ipsum voluptatem distinctio molestiae, a, quod dolore minus aperiam iure voluptas iste est officia sint voluptatibus delectus impedit sunt velit.<br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita doloremque ipsum voluptatem distinctio molestiae, a, quod dolore minus aperiam iure voluptas iste est officia sint voluptatibus delectus impedit sunt velit.<br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita doloremque ipsum voluptatem distinctio molestiae, a, quod dolore minus aperiam iure voluptas iste est officia sint voluptatibus delectus impedit sunt velit.<br><br>
+        </p>
+    </section>
+
+    <section class="sec1" id="photos">
+        <h2>Photos</h2>
+        <div class="photos-grid">
+            <img src="assets/mantap.png" alt="Photo 1">
+            <img src="assets/mantap.png" alt="Photo 2">
+            <img src="assets/mantap.png" alt="Photo 3">
+        </div>
+    </section>
+    <section class="sec last-section">
+        <h2>End of Page</h2>
+    </section>
+    
+
+    <script src="script.js"></script>
+    <script>
+        const navLinks = document.querySelectorAll('.navigation a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                navLinks.forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+
+                const sectionId = this.getAttribute('href').substring(1);
+                document.getElementById(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const fromTop = window.scrollY + 80;
+            navLinks.forEach(link => {
+                const section = document.querySelector(link.hash);
+                if (
+                    section.offsetTop <= fromTop &&
+                    section.offsetTop + section.offsetHeight > fromTop
+                ) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
